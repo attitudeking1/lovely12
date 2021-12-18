@@ -1,5 +1,4 @@
-from sqlalchemy import Boolean, Column, String, UnicodeText
-from sqlalchemy import BigInteger as Integer
+from sqlalchemy import Boolean, Column, String, UnicodeText, Integer
 from MashaRoBot.modules.sql import BASE, SESSION
 
 
