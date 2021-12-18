@@ -15,7 +15,6 @@ from MashaRoBot import (
     DEMONS,
     TIGERS,
     WOLVES,
-    sw,
     dispatcher,
     JOIN_LOGGER
 )
