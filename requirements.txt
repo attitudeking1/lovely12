@@ -5,6 +5,7 @@ wget
 gtts
 faker
 arq
+sw
 odmantic
 redis
 httpx
