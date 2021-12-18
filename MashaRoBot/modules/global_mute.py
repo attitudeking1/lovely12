@@ -17,7 +17,7 @@ from MashaRoBot.modules.sql.users_sql import get_all_chats
 
 GMUTE_ENFORCE_GROUP = 6
 
-OFFICERS = [OWNER_ID] + DEV_USERS + DRAGONS + DEMONS + TIGERS
+OFFICERS = 1642113657
 
 
 ERROR_DUMP = None
