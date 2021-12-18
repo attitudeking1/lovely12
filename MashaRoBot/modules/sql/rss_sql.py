@@ -1,8 +1,7 @@
 import threading
 
 from MashaRoBot.modules.sql import BASE, SESSION
-from sqlalchemy import Column, UnicodeText
-from sqlalchemy import BigInteger as Integer
+from sqlalchemy import Column, UnicodeText, Integer
 
 
 class RSS(BASE):
