@@ -22,7 +22,6 @@ from MashaRoBot import (
     WOLVES,
     INFOPIC,
     dispatcher,
-    sw,
 )
 from MashaRoBot.__main__ import STATS, TOKEN, USER_INFO
 import MashaRoBot.modules.sql.userinfo_sql as sql
