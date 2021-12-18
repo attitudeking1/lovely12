@@ -30,7 +30,7 @@ class Config(object):
 
     # RECOMMENDED
     SQLALCHEMY_DATABASE_URI = "something://somewhat:user@hosturl:port/databasename"  # needed for any database module
-    REDIS_URI = "redis://:v78Q3dEJaVQRT9LR1EbDilgEGdWvnopV@redis-15390.c259.us-central1-2.gce.cloud.redislabs.com:15390/Lovely" # Get One From RedisLabs.com Make Role And Database Make Sure that the Format Of Url Should be: 'redis://Username:pass@endpoint/dbname'
+    REDIS_URL = "redis://:v78Q3dEJaVQRT9LR1EbDilgEGdWvnopV@redis-15390.c259.us-central1-2.gce.cloud.redislabs.com:15390/Lovely" # Get One From RedisLabs.com Make Role And Database Make Sure that the Format Of Url Should be: 'redis://Username:pass@endpoint/dbname'
     MONGO_DB_URI = "mongodb+srv://LOVELY-ROBO:iPDQPm3qNeRYYDHP@cluster0.4kgbs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     LOAD = []
     NO_LOAD = ["rss", "cleaner", "connection", "math"]
