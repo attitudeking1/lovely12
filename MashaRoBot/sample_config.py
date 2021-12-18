@@ -61,7 +61,7 @@ class Config(object):
     )
     TIME_API_KEY = "IUHUQBIOU1T9"  # Get your API key from https://timezonedb.com/api
     WALL_API = (
-        "awoo"  # For wallpapers, get one from https://wall.alphacoders.com/api.php
+        " "  # For wallpapers, get one from https://wall.alphacoders.com/api.php
     )
     BL_CHATS = []  # List of groups that you want blacklisted.
     SPAMMERS = None
