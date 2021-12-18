@@ -7,10 +7,10 @@ from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
 from MashaRoBot.conf import get_int_key, get_str_key
 from MashaRoBot import LOGGER
-from MashaRoBot import config
+from MashaRoBot.config import MONGO_DB_URI
 
 MONGO_PORT = 27017
-MONGO_DB_URI = config.MONGO_DB_URI
+MONGO_DB_URI = Config.MONGO_DB_URI
 MONGO_DB = "Lovely"
 
 
