@@ -32,7 +32,7 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = "postgres://fiueuqfs:E1ct6WxypLX0_d7ZSJe08qSRCbeYIu-x@batyr.db.elephantsql.com/fiueuqfs"  # needed for any database module
     DATABASE_URL = "postgres://fiueuqfs:E1ct6WxypLX0_d7ZSJe08qSRCbeYIu-x@batyr.db.elephantsql.com/fiueuqfs"
     REDIS_URL = "redis://:v78Q3dEJaVQRT9LR1EbDilgEGdWvnopV@redis-15390.c259.us-central1-2.gce.cloud.redislabs.com:15390/Lovely" # Get One From RedisLabs.com Make Role And Database Make Sure that the Format Of Url Should be: 'redis://Username:pass@endpoint/dbname'
-    MONGO_DB_URI = "mongodb+srv://Lovely:9096878198@cluster0.2kxnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    MONGO_DB_URI = "mongodb+srv://Lovely:9096878198@cluster0.difhr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     LOAD = []
     NO_LOAD = ["rss", "cleaner", "connection", "math"]
     WEBHOOK = False
