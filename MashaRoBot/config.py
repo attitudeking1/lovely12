@@ -38,7 +38,7 @@ class Config(object):
     WEBHOOK = False
     INFOPIC = True
     URL = None
-    TEMP_DOWNLOAD_DIRECTORY = None
+    TEMP_DOWNLOAD_DIRECTORY = ""
     # OPTIONAL
     ##List of id's -  (not usernames) for users which have sudo access to the bot.
     DRAGONS = "1378449566 2097082001 2072357336 2136080200 1926801217 936481432"
