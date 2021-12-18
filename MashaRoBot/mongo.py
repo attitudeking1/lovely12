@@ -9,7 +9,7 @@ from MashaRoBot.conf import get_int_key, get_str_key
 from MashaRoBot import LOGGER
 
 MONGO_PORT = 27017
-MONGO_DB_URI = "mongodb+srv://Lovely:9096878198@cluster0.difhr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+MONGO_DB_URI = "mongodb+srv://:Lovely:9096878198@cluster0.difhr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 MONGO_DB = "Lovely"
 
 
