@@ -2,9 +2,8 @@ import threading
 import time
 from typing import Union
 
-from sqlalchemy import Column, String, Boolean, UnicodeText
-
-from sqlalchemy import BigInteger as Integer
+from sqlalchemy import Column, String, Boolean, UnicodeText, Integer
+from sqlalchemy.sql.sqltypes import BigInteger
 
 from MashaRoBot.modules.sql import SESSION, BASE
 
@@ -20,13 +19,14 @@ class ChatAccessConnectionSettings(BASE):
 
     def __repr__(self):
         return "<Chat access settings ({}) is {}>".format(
-            self.chat_id, self.allow_connect_to_chat
+            self.chat_id,
+            self.allow_connect_to_chat,
         )
 
 
 class Connection(BASE):
     __tablename__ = "connection"
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(BigInteger, primary_key=True)
     chat_id = Column(String(14))
 
     def __init__(self, user_id, chat_id):
@@ -36,7 +36,7 @@ class Connection(BASE):
 
 class ConnectionHistory(BASE):
     __tablename__ = "connection_history"
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(BigInteger, primary_key=True)
     chat_id = Column(String(14), primary_key=True)
     chat_name = Column(UnicodeText)
     conn_time = Column(Integer)
@@ -115,9 +115,8 @@ def disconnect(user_id):
             SESSION.delete(disconnect)
             SESSION.commit()
             return True
-        else:
-            SESSION.close()
-            return False
+        SESSION.close()
+        return False
 
 
 def add_history_conn(user_id, chat_id, chat_name):
@@ -136,7 +135,7 @@ def add_history_conn(user_id, chat_id, chat_name):
             if chat_id in getchat_id:
                 todeltime = getchat_id[str(chat_id)]
                 delold = SESSION.query(ConnectionHistory).get(
-                    (int(user_id), str(chat_id))
+                    (int(user_id), str(chat_id)),
                 )
                 if delold:
                     SESSION.delete(delold)
@@ -148,7 +147,7 @@ def add_history_conn(user_id, chat_id, chat_name):
                 for x in todel:
                     chat_old = HISTORY_CONNECT[int(user_id)][x]["chat_id"]
                     delold = SESSION.query(ConnectionHistory).get(
-                        (int(user_id), str(chat_old))
+                        (int(user_id), str(chat_old)),
                     )
                     if delold:
                         SESSION.delete(delold)
