@@ -211,12 +211,11 @@ db = mongo_client.MashaRoBot
 dispatcher = updater.dispatcher
 
 
-DRAGONS = list(DRAGONS) + list(DEV_USERS)
-DEV_USERS = list(DEV_USERS)
-WOLVES = list(WOLVES)
-DEMONS = list(DEMONS)
-TIGERS = list(TIGERS)
-SUDO_USERS = list(SUDO_USERS)
+DRAGONS = Config.DRAGONS
+DEV_USERS = Config.DEV_USERS
+WOLVES = Config.WOLVES
+DEMONS = Config.DEMONS
+TIGERS = Config.TIGERS
 
 # Load at end to ensure all prev variables have been set
 from MashaRoBot.modules.helper_funcs.handlers import (
