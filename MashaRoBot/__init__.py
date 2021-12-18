@@ -84,6 +84,7 @@ if ENV:
     ALLOW_EXCL = os.environ.get("ALLOW_EXCL", False)
     CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
+    WALL_API = os.environ.get("WALL_API", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     REDIS_URL = os.environ.get("REDIS_URL")
@@ -151,6 +152,7 @@ else:
     ALLOW_EXCL = Config.ALLOW_EXCL
     CASH_API_KEY = Config.CASH_API_KEY
     TIME_API_KEY = Config.TIME_API_KEY
+    WALL_API = Config.WALL_API
     SUPPORT_CHAT = Config.SUPPORT_CHAT
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
