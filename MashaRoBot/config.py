@@ -29,7 +29,8 @@ class Config(object):
     )  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
 
     # RECOMMENDED
-    SQLALCHEMY_DATABASE_URI = "something://somewhat:user@hosturl:port/databasename"  # needed for any database module
+    SQLALCHEMY_DATABASE_URI = "postgres://fiueuqfs:E1ct6WxypLX0_d7ZSJe08qSRCbeYIu-x@batyr.db.elephantsql.com/fiueuqfs"  # needed for any database module
+    DATABASE_URL = "postgres://fiueuqfs:E1ct6WxypLX0_d7ZSJe08qSRCbeYIu-x@batyr.db.elephantsql.com/fiueuqfs"
     REDIS_URL = "redis://:v78Q3dEJaVQRT9LR1EbDilgEGdWvnopV@redis-15390.c259.us-central1-2.gce.cloud.redislabs.com:15390/Lovely" # Get One From RedisLabs.com Make Role And Database Make Sure that the Format Of Url Should be: 'redis://Username:pass@endpoint/dbname'
     MONGO_DB_URI = "mongodb+srv://LOVELY-ROBO:iPDQPm3qNeRYYDHP@cluster0.4kgbs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     LOAD = []
