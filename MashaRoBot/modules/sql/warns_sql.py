@@ -2,16 +2,16 @@ import threading
 
 from MashaRoBot.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, String, UnicodeText, distinct, func
-from sqlalchemy import BigInteger as Integer
 from sqlalchemy.dialects import postgresql
+from sqlalchemy.sql.sqltypes import BigInteger
 
 
 class Warns(BASE):
     __tablename__ = "warns"
 
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(BigInteger, primary_key=True)
     chat_id = Column(String(14), primary_key=True)
-    num_warns = Column(Integer, default=0)
+    num_warns = Column(BigInteger, default=0)
     reasons = Column(postgresql.ARRAY(UnicodeText))
 
     def __init__(self, user_id, chat_id):
@@ -22,7 +22,10 @@ class Warns(BASE):
 
     def __repr__(self):
         return "<{} warns for {} in {} for reasons {}>".format(
-            self.num_warns, self.user_id, self.chat_id, self.reasons
+            self.num_warns,
+            self.user_id,
+            self.chat_id,
+            self.reasons,
         )
 
 
@@ -44,14 +47,14 @@ class WarnFilters(BASE):
         return bool(
             isinstance(other, WarnFilters)
             and self.chat_id == other.chat_id
-            and self.keyword == other.keyword
+            and self.keyword == other.keyword,
         )
 
 
 class WarnSettings(BASE):
     __tablename__ = "warn_settings"
     chat_id = Column(String(14), primary_key=True)
-    warn_limit = Column(Integer, default=3)
+    warn_limit = Column(BigInteger, default=3)
     soft_warn = Column(Boolean, default=False)
 
     def __init__(self, chat_id, warn_limit=3, soft_warn=False):
@@ -83,7 +86,7 @@ def warn_user(user_id, chat_id, reason=None):
         warned_user.num_warns += 1
         if reason:
             warned_user.reasons = warned_user.reasons + [
-                reason
+                reason,
             ]  # TODO:: double check this wizardry
 
         reasons = warned_user.reasons
@@ -212,8 +215,7 @@ def get_warn_setting(chat_id):
         setting = SESSION.query(WarnSettings).get(str(chat_id))
         if setting:
             return setting.warn_limit, setting.soft_warn
-        else:
-            return 3, False
+        return 3, False
 
     finally:
         SESSION.close()
