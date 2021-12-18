@@ -103,3 +103,12 @@ async def cb_handler(bot, query):
                 f"**{mention} has been unbanned by {query.from_user.mention}**"
             )
             await query.message.edit_reply_markup(reply_markup=None)
+__help__ = """
+You can ban those users who are chatting using channel
+Ban channel
+Command `/chban <channel id>`
+Unban channel
+Command `/chunban <channel id`
+"""
+
+__mod_name__ = "Cʜᴀɴɴᴇʟʙᴀɴ🚫"
