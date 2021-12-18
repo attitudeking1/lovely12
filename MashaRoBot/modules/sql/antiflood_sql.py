@@ -1,6 +1,7 @@
 import threading
 
-from sqlalchemy import String, Column, BigInteger, UnicodeText
+from sqlalchemy import String, Column, Integer, UnicodeText
+from sqlalchemy.sql.sqltypes import BigInteger
 
 from MashaRoBot.modules.sql import SESSION, BASE
 
@@ -13,8 +14,8 @@ class FloodControl(BASE):
     __tablename__ = "antiflood"
     chat_id = Column(String(14), primary_key=True)
     user_id = Column(BigInteger)
-    count = Column(BigInteger, default=DEF_COUNT)
-    limit = Column(BigInteger, default=DEF_LIMIT)
+    count = Column(Integer, default=DEF_COUNT)
+    limit = Column(Integer, default=DEF_LIMIT)
 
     def __init__(self, chat_id):
         self.chat_id = str(chat_id)  # ensure string
@@ -26,7 +27,7 @@ class FloodControl(BASE):
 class FloodSettings(BASE):
     __tablename__ = "antiflood_settings"
     chat_id = Column(String(14), primary_key=True)
-    flood_type = Column(BigInteger, default=1)
+    flood_type = Column(Integer, default=1)
     value = Column(UnicodeText, default="0")
 
     def __init__(self, chat_id, flood_type=1, value="0"):
@@ -98,7 +99,9 @@ def set_flood_strength(chat_id, flood_type, value):
         curr_setting = SESSION.query(FloodSettings).get(str(chat_id))
         if not curr_setting:
             curr_setting = FloodSettings(
-                chat_id, flood_type=int(flood_type), value=value
+                chat_id,
+                flood_type=int(flood_type),
+                value=value,
             )
 
         curr_setting.flood_type = int(flood_type)
@@ -113,8 +116,7 @@ def get_flood_setting(chat_id):
         setting = SESSION.query(FloodSettings).get(str(chat_id))
         if setting:
             return setting.flood_type, setting.value
-        else:
-            return 1, "0"
+        return 1, "0"
 
     finally:
         SESSION.close()
