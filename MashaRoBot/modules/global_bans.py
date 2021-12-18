@@ -27,7 +27,6 @@ from MashaRoBot import (
     DEMONS,
     TIGERS,
     WOLVES,
-    sw,
     dispatcher,
 )
 from MashaRoBot.modules.helper_funcs.chat_status import (
