@@ -83,12 +83,9 @@ if ENV:
     ALLOW_EXCL = os.environ.get("ALLOW_EXCL", False)
     CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
-    WALL_API = os.environ.get("WALL_API", None)
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     REDIS_URL = os.environ.get("REDIS_URL")
-    IBM_WATSON_CRED_URL = os.environ.get("IBM_WATSON_CRED_URL", None)
-    IBM_WATSON_CRED_PASSWORD = os.environ.get("IBM_WATSON_CRED_PASSWORD", None)
-
+    
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
     try:
@@ -154,9 +151,7 @@ else:
     SUPPORT_CHAT = Config.SUPPORT_CHAT
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
-    IBM_WATSON_CRED_URL = Config.IBM_WATSON_CRED_URL
-    IBM_WATSON_CRED_PASSWORD = Config.IBM_WATSON_CRED_PASSWORD
-
+    
     
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
