@@ -269,7 +269,6 @@ def info(update: Update, context: CallbackContext):
         userhp = hpmanager(user)
         text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
-    try:
 
     if user.id == OWNER_ID:
         text += "\n\nThe Disaster level of this person is 'Superior'."
