@@ -47,7 +47,7 @@ def user_can_pin(chat: Chat, user: User, bot_id: int) -> bool:
 def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     if (
         chat.type == "private"
-        or user_id is 1642113657
+        or user_id == 1642113657
 
         or chat.all_members_are_administrators
         or user_id in {777000, 1087968824}
