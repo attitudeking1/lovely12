@@ -270,17 +270,6 @@ def info(update: Update, context: CallbackContext):
         text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
     try:
-        spamwtc = sw.get_ban(int(user.id))
-        if spamwtc:
-            text += "\n\n<b>This person is Spamwatched!</b>"
-            text += f"\nReason: <pre>{spamwtc.reason}</pre>"
-            text += "\nAppeal at @LOVELYAPPEAL"
-        else:
-            pass
-    except:
-        pass  # don't crash if api is down somehow...
-
-    disaster_level_present = False
 
     if user.id == OWNER_ID:
         text += "\n\nThe Disaster level of this person is 'Superior'."
