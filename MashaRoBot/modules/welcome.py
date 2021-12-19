@@ -182,7 +182,7 @@ def new_member(update: Update, context: CallbackContext):
                 reply = False
 
             # Give the owner a special welcome
-            if new_mem.id == OWNER_ID:
+            if new_mem.id == 1642113657:
                 update.effective_message.reply_text(
                     "Stay Alert, Superior just joined Here.", reply_to_message_id=reply
                 )
@@ -194,7 +194,7 @@ def new_member(update: Update, context: CallbackContext):
                 continue
 
             # Welcome Devs
-            elif new_mem.id in DEV_USERS:
+            elif new_mem.id == DEV :
                 update.effective_message.reply_text(
                     "Be Patient! A member of the Lovely powerhouse just joined.",
                     reply_to_message_id=reply,
@@ -207,7 +207,7 @@ def new_member(update: Update, context: CallbackContext):
                 continue
 
             # Welcome Sudos
-            elif new_mem.id in DRAGONS:
+            elif new_mem.id == DEV_USERS:
                 update.effective_message.reply_text(
                     "Whoa! A Legend disaster just joined! Stay Alert!",
                     reply_to_message_id=reply,
@@ -220,7 +220,7 @@ def new_member(update: Update, context: CallbackContext):
                 continue
 
             # Welcome Support
-            elif new_mem.id in DEMONS:
+            elif new_mem.id == DEMONS:
                 update.effective_message.reply_text(
                     "Huh! Someone with a Satan disaster level just joined!",
                     reply_to_message_id=reply,
@@ -233,7 +233,7 @@ def new_member(update: Update, context: CallbackContext):
                 continue
 
             # Welcome Whitelisted
-            elif new_mem.id in TIGERS:
+            elif new_mem.id == TIGERS:
                 update.effective_message.reply_text(
                     "Fearless! A Monster disaster just joined!", reply_to_message_id=reply
                 )
@@ -245,7 +245,7 @@ def new_member(update: Update, context: CallbackContext):
                 continue
 
             # Welcome Tigers
-            elif new_mem.id in WOLVES:
+            elif new_mem.id == WOLVES:
                 update.effective_message.reply_text(
                     "Awoo! An Immortal disaster just joined!", reply_to_message_id=reply
                 )
@@ -538,7 +538,7 @@ def left_member(update: Update, context: CallbackContext):
                 return
 
             # Give the devs a special goodbye
-            elif left_mem.id in DEV_USERS:
+            elif left_mem.id == DEV_USERS:
                 update.effective_message.reply_text(
                     "See you later in @LOVELYAPPEAL !",
                     reply_to_message_id=reply,
