@@ -22,7 +22,7 @@ THREAD_LOCK = RLock()
 
 
 def is_whitelist_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
-    return any(user_id in user for user == "WOLVES TIGERS DEMONS DRAGONS DEV_USERS")
+    return any(user_id in user for user == WOLVES TIGERS DEMONS DRAGONS DEV_USERS)
 
 
 def is_support_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
