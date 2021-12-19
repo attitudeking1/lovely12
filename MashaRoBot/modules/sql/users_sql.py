@@ -1,7 +1,7 @@
 import threading
 
-from Zaid import dispatcher
-from Zaid.modules.sql import BASE, SESSION
+from MashaRoBot import dispatcher
+from MashaRoBot.modules.sql import BASE, SESSION
 from sqlalchemy import (
     Column,
     ForeignKey,
