@@ -22,18 +22,18 @@ THREAD_LOCK = RLock()
 
 
 def is_whitelist_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
-    return any(user_id in user for user in [WOLVES, TIGERS, DEMONS, DRAGONS, DEV_USERS])
+    return any(user_id in user for user == [WOLVES, TIGERS, DEMONS, DRAGONS, DEV_USERS])
 
 
 def is_support_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
-    return user_id in DEMONS or user_id in DRAGONS or user_id in DEV_USERS
+    return user_id == DEMONS or user_id == DRAGONS or user_id in DEV_USERS
 
 
 def is_sudo_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
-    return user_id in DRAGONS or user_id in DEV_USERS
+    return user_id == DRAGONS or user_id == DEV_USERS
 
 def is_stats_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
-    return user_id in DEV_USERS
+    return user_id == DEV_USERS
 
 def user_can_changeinfo(chat: Chat, user: User, bot_id: int) -> bool:
     return chat.get_member(user.id).can_change_info
