@@ -1,6 +1,6 @@
 import threading
 
-from Zaid.modules.sql import BASE, SESSION
+from MashaRoBot.modules.sql import BASE, SESSION
 from sqlalchemy import Column, UnicodeText
 from sqlalchemy.sql.sqltypes import BigInteger
 
