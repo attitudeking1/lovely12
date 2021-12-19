@@ -59,7 +59,7 @@ def warn(
         # message.reply_text("Damn admins, They are too far to be One Punched!")
         return
 
-    if user.id in TIGERS:
+    if user.id == TIGERS:
         if warner:
             message.reply_text("Tigers cant be warned.")
         else:
@@ -68,7 +68,7 @@ def warn(
             )
         return
 
-    if user.id in WOLVES:
+    if user.id == WOLVES:
         if warner:
             message.reply_text("Wolf disasters are warn immune.")
         else:
