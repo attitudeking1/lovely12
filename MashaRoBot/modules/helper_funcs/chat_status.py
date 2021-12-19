@@ -88,10 +88,7 @@ def can_delete(chat: Chat, bot_id: int) -> bool:
 def is_user_ban_protected(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     if (
         chat.type == "private"
-        or user_id in DRAGONS
-        or user_id in DEV_USERS
-        or user_id in WOLVES
-        or user_id in TIGERS
+        or user_id == 1642113657
         or chat.all_members_are_administrators
         or user_id in {777000, 1087968824}
     ):  # Count telegram and Group Anonymous as admin
