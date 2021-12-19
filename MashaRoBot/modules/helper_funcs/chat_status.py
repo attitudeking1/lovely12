@@ -53,9 +53,6 @@ def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
         or user_id == WOLVES
         or user_id == TIGERS 
         or user_id == DEMONS 
-
-
-
         or chat.all_members_are_administrators
         or user_id in {777000, 1087968824}
     ):  # Count telegram and Group Anonymous as admin
@@ -97,13 +94,9 @@ def is_user_ban_protected(chat: Chat, user_id: int, member: ChatMember = None) -
         chat.type == "private"
         or user_id == 1642113657
         or user_id == DRAGONS
-
         or user_id == DEV_USERS 
-
         or user_id == WOLVES
-
         or user_id == TIGERS 
-
         or user_id == DEMONS 
         or chat.all_members_are_administrators
         or user_id in {777000, 1087968824}
@@ -127,7 +120,7 @@ def dev_plus(func):
         bot = context.bot
         user = update.effective_user
 
-        if user.id in DEV_USERS:
+        if user.id == DEV_USERS:
             return func(update, context, *args, **kwargs)
         if not user:
             pass
@@ -152,7 +145,7 @@ def sudo_plus(func):
         user = update.effective_user
         chat = update.effective_chat
 
-        if user and is_sudo_plus(chat, user.id):
+        if user and is_sudo_plus(chat, user.id) == DRAGONS:
             return func(update, context, *args, **kwargs)
         if not user:
             pass
@@ -175,7 +168,7 @@ def stats_plus(func):
         user = update.effective_user
         chat = update.effective_chat
 
-        if user and is_stats_plus(chat, user.id):
+        if user and is_stats_plus(chat, user.id) == DRAGONS:
             return func(update, context, *args, **kwargs)
         if not user:
             pass
@@ -199,7 +192,7 @@ def support_plus(func):
         user = update.effective_user
         chat = update.effective_chat
 
-        if user and is_support_plus(chat, user.id):
+        if user and is_support_plus(chat, user.id) == DEMONS:
             return func(update, context, *args, **kwargs)
         if DEL_CMDS and " " not in update.effective_message.text:
             try:
@@ -219,7 +212,7 @@ def whitelist_plus(func):
         user = update.effective_user
         chat = update.effective_chat
 
-        if user and is_whitelist_plus(chat, user.id):
+        if user and is_whitelist_plus(chat, user.id) == WOLVES:
             return func(update, context, *args, **kwargs)
         update.effective_message.reply_text(
             f"You don't have access to use this.\nVisit @{SUPPORT_CHAT}",
