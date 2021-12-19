@@ -2,8 +2,8 @@ import random
 import threading
 from typing import Union
 
-from Zaid.modules.helper_funcs.msg_types import Types
-from Zaid.modules.sql import BASE, SESSION
+from MashaRoBot.modules.helper_funcs.msg_types import Types
+from MashaRoBot.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, String, UnicodeText
 from sqlalchemy.sql.sqltypes import BigInteger
 
