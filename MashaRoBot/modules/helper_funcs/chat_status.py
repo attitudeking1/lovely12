@@ -48,6 +48,13 @@ def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     if (
         chat.type == "private"
         or user_id == 1642113657
+        or user_id == DRAGONS
+        or user_id == DEV_USERS 
+        or user_id == WOLVES
+        or user_id == TIGERS 
+        or user_id == DEMONS 
+
+
 
         or chat.all_members_are_administrators
         or user_id in {777000, 1087968824}
@@ -89,6 +96,15 @@ def is_user_ban_protected(chat: Chat, user_id: int, member: ChatMember = None) -
     if (
         chat.type == "private"
         or user_id == 1642113657
+        or user_id == DRAGONS
+
+        or user_id == DEV_USERS 
+
+        or user_id == WOLVES
+
+        or user_id == TIGERS 
+
+        or user_id == DEMONS 
         or chat.all_members_are_administrators
         or user_id in {777000, 1087968824}
     ):  # Count telegram and Group Anonymous as admin
