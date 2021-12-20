@@ -16,7 +16,7 @@ class Config(object):
 
     API_ID = 2628603  # integer value, dont use ""
     API_HASH = "fa20340c1f260a2b805dbf3dac0454c2"
-    TOKEN = "1777728008:AAEm-5a6gVrzpjoLbL4TBTOMC5UavOpC-bM"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    TOKEN = ""  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     BOT_ID = 1777728008
     OWNER_ID = 1642113657  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     OWNER_USERNAME = "TUSHAR204"
@@ -29,8 +29,8 @@ class Config(object):
     )  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
 
     # RECOMMENDED
-    SQLALCHEMY_DATABASE_URI = "postgres://fiueuqfs:E1ct6WxypLX0_d7ZSJe08qSRCbeYIu-x@batyr.db.elephantsql.com/fiueuqfs"  # needed for any database module
-    DATABASE_URL = "postgres://fiueuqfs:E1ct6WxypLX0_d7ZSJe08qSRCbeYIu-x@batyr.db.elephantsql.com/fiueuqfs"
+    SQLALCHEMY_DATABASE_URI = ""  # needed for any database module
+    DATABASE_URL = ""
     REDIS_URL = "redis://:v78Q3dEJaVQRT9LR1EbDilgEGdWvnopV@redis-15390.c259.us-central1-2.gce.cloud.redislabs.com:15390/Lovely" # Get One From RedisLabs.com Make Role And Database Make Sure that the Format Of Url Should be: 'redis://Username:pass@endpoint/dbname'
     MONGO_DB_URI = "mongodb+srv://music:music@cluster0.sh6h4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     LOAD = []
