@@ -4,7 +4,7 @@ import aiofiles
 import aiohttp
 from random import randint
 from pyrogram import filters
-from MashaRoBot import pbot as LYCIA
+from Zaid import pbot as LOVELY
 
 async def fetch(url):
     async with aiohttp.ClientSession() as session:
@@ -15,8 +15,8 @@ async def fetch(url):
                 data = await resp.text()
     return data
 
-async def ai_lycia(url):
-    ai_name = "Lycia.mp3"
+async def ai_lovely(url):
+    ai_name = "Lovely.mp3"
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
             if resp.status == 200:
@@ -26,13 +26,13 @@ async def ai_lycia(url):
     return ai_name
 
 
-@LYCIA.on_message(filters.command("Lovely"))
-async def Lycia(_, message):
+@LOVELY.on_message(filters.command("Lovely"))
+async def Lovely(_, message):
     if len(message.command) < 2:
         await message.reply_text("Lovely AI Voice Chatbot")
         return
     text = message.text.split(None, 1)[1]
-    lycia = text.replace(" ", "%20")
+    lovely = text.replace(" ", "%20")
     m = await message.reply_text("Lovely Is Best...")
     try:
         L = await fetch(f"https://api.affiliateplus.xyz/api/chatbot?message={lycia}&botname=lovely&ownername=Tushar204&user=1")
@@ -42,9 +42,9 @@ async def Lycia(_, message):
     except Exception as e:
         await m.edit(str(e))
         return
-    await m.edit("Made By @Lovelydevs...")
-    LyciaVoice = await ai_lycia(VoiceAi)
+    await m.edit("Made By @Tushar204...")
+    LovelyVoice = await ai_lovely(VoiceAi)
     await m.edit("Repyping...")
-    await message.reply_audio(audio=LyciaVoice, title=chatbot, performer=name)
-    os.remove(LyciaVoice)
+    await message.reply_audio(audio=LovelyVoice, title=chatbot, performer=name)
+    os.remove(LovelyVoice)
     await m.delete()
